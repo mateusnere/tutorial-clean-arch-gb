@@ -1,9 +1,16 @@
-package com.mateusnere.example.model;
+package com.mateusnere.example.infrastructure.persistence;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
-public class User {
+@Table(name = "USER")
+public class UserEntity {
 
+    public UserEntity(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
     @Id
     private Long id;
     private String username;
